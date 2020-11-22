@@ -6,6 +6,7 @@ OH_MY_ZSH_DIR=$HOME/.oh-my-zsh
 CUSTOM_DIR=$OH_MY_ZSH_DIR/custom
 PLUGIN_DIR=$CUSTOM_DIR/plugins
 THEMES_DIR=$CUSTOM_DIR/themes
+CONFIG_DIR=$HOME/.config
 ZSH_CMD=`which zsh`
 echo $ZSH_CMD
 
@@ -26,13 +27,7 @@ else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
-echo -e "Installing plugins and theme\n"
-
-if [ -d $THEMES_DIR/spaceship-prompt ]; then
-    cd $THEMES_DIR/spaceship-prompt && git pull
-else
-    git clone --depth 1 https://github.com/denysdovhan/spaceship-prompt.git $THEMES_DIR/spaceship-prompt
-fi
+echo -e "Installing plugins\n"
 
 if [ -d $PLUGIN_DIR/k ]; then
     cd $PLUGIN_DIR/k && git pull
@@ -66,11 +61,11 @@ fi
 
 echo -e "Removing ~/.zshrc and re-linking\n"
 rm ~/.zshrc
-ln -s ~/zsh-config/zshrc ~/.zshrc
-rm $THEMES_DIR/spaceship.zsh-theme
-ln -s "$THEMES_DIR/spaceship-prompt/spaceship.zsh-theme" "$THEMES_DIR/spaceship.zsh-theme"
-echo $PWD_DIR
-cp $PWD_DIR/aliases.zsh $CUSTOM_DIR/aliases.zsh
+ln -s $PWD_DIR/zshrc ~/.zshrc
+rm $CUSTOM_DIR/aliases.zsh
+ln -s $PWD_DIR/aliases.zsh $CUSTOM_DIR/aliases.zsh
+rm $CONFIG_DIR/starship.toml
+ln -s $PWD_DIR/starship.toml $CONFIG_DIR/starship.toml
 
 # source ~/.zshrc
 echo -e "\nSudo access is needed to change default shell\n"
