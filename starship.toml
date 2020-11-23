@@ -32,10 +32,14 @@ $character"""
 [directory]
 truncation_length = 1
 
+[git_branch]
+# replace "on" with "⭑"
+format = "⭑ [$symbol$branch]($style) "
+
 [python]
-# replace "via" with "⤇"
-format = '⤇ [${symbol}${pyenv_prefix}${version}( \($virtualenv\))]($style) '
+# replace "via" with "⮕"
+format = '⮕ [${symbol}${pyenv_prefix}${version}( \($virtualenv\))]($style) '
 
 [terraform]
-# replace "via" with "⤇"
-format = '⤇ [$symbol$workspace]($style) '
+# replace "via" with "⮕"
+format = '⮕ [$symbol$workspace]($style) '

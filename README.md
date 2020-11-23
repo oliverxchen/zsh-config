@@ -5,4 +5,4 @@ To setup zsh with reasonable configurations:
 ./setup-zsh.sh
 ```
 
-Inspried by: https://github.com/jotyGill/quickz-sh
+Inspired by: https://github.com/jotyGill/quickz-sh
