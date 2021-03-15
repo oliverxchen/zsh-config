@@ -41,6 +41,7 @@ export ZSH="/Users/oliver.chen/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   k
+  poetry
   zsh-autosuggestions
   zsh-completions
   zsh-history-substring-search
@@ -84,3 +85,15 @@ eval "$(direnv hook zsh)"
 
 # Starship prompt
 eval "$(starship init zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/oliver.chen/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/oliver.chen/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/oliver.chen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/oliver.chen/google-cloud-sdk/completion.zsh.inc'; fi
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+export PATH="$HOME/.poetry/bin:$PATH"
