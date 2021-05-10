@@ -64,6 +64,7 @@ rm ~/.zshrc
 ln -s $PWD_DIR/zshrc ~/.zshrc
 rm $CUSTOM_DIR/aliases.zsh
 ln -s $PWD_DIR/aliases.zsh $CUSTOM_DIR/aliases.zsh
+ln -s $PWD_DIR/autosuggest.zsh $CUSTOM_DIR/autosuggest.zsh
 rm $CONFIG_DIR/starship.toml
 ln -s $PWD_DIR/starship.toml $CONFIG_DIR/starship.toml
 
