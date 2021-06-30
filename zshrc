@@ -89,8 +89,8 @@ eval "$(starship init zsh)"
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/oliver.chen/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/oliver.chen/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/oliver.chen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/oliver.chen/google-cloud-sdk/completion.zsh.inc'; fi
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/Users/oliver.chen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/oliver.chen/google-cloud-sdk/completion.zsh.inc'; fi
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -111,3 +111,20 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="/usr/local/opt/node@12/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/oliver.chen/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/oliver.chen/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/oliver.chen/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/oliver.chen/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export PATH=$HOME/bin:$PATH
