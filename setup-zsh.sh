@@ -29,6 +29,12 @@ fi
 
 echo -e "Installing plugins\n"
 
+if [ -d $THEMES_DIR/powerlevel10k ]; then
+    cd $THEMES_DIR/powerlevel10k && git pull
+else
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${THEMES_DIR}/powerlevel10k
+fi
+
 if [ -d $PLUGIN_DIR/k ]; then
     cd $PLUGIN_DIR/k && git pull
 else
@@ -59,14 +65,13 @@ else
     git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGIN_DIR/zsh-syntax-highlighting
 fi
 
-echo -e "Removing ~/.zshrc and re-linking\n"
+echo -e "Removing files and re-linking\n"
 rm ~/.zshrc
 ln -s $PWD_DIR/zshrc ~/.zshrc
 rm $CUSTOM_DIR/aliases.zsh
 ln -s $PWD_DIR/aliases.zsh $CUSTOM_DIR/aliases.zsh
+rm $CUSTOM_DIR/autosuggest.zsh
 ln -s $PWD_DIR/autosuggest.zsh $CUSTOM_DIR/autosuggest.zsh
-rm $CONFIG_DIR/starship.toml
-ln -s $PWD_DIR/starship.toml $CONFIG_DIR/starship.toml
 
 # source ~/.zshrc
 echo -e "\nSudo access is needed to change default shell\n"
