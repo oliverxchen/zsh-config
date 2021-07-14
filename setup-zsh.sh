@@ -66,11 +66,11 @@ else
 fi
 
 echo -e "Removing files and re-linking\n"
-rm ~/.zshrc
+rm -f ~/.zshrc
 ln -s $PWD_DIR/zshrc ~/.zshrc
-rm $CUSTOM_DIR/aliases.zsh
+rm -f $CUSTOM_DIR/aliases.zsh
 ln -s $PWD_DIR/aliases.zsh $CUSTOM_DIR/aliases.zsh
-rm $CUSTOM_DIR/autosuggest.zsh
+rm -f $CUSTOM_DIR/autosuggest.zsh
 ln -s $PWD_DIR/autosuggest.zsh $CUSTOM_DIR/autosuggest.zsh
 
 # source ~/.zshrc
