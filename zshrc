@@ -46,7 +46,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   k
-  poetry
   zsh-autosuggestions
   zsh-completions
   zsh-history-substring-search
@@ -64,9 +63,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nano'
 else
-  export EDITOR='vim'
+  export EDITOR='nano'
 fi
 
 # Compilation flags
@@ -78,12 +77,12 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshconfig="nano ~/.zshrc"
+alias ohmyzsh="nano ~/.oh-my-zsh"
 
 # CDPATH
 setopt auto_cd
-cdpath=(. $HOME $HOME/src $HOME/Google\ Drive\ \(oliver.chen@traveloka.com\))
+cdpath=(. $HOME)
 
 # Hook direnv into zsh
 eval "$(direnv hook zsh)"
@@ -110,9 +109,6 @@ pastefinish() {
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
-
-export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="/usr/local/opt/node@12/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
