@@ -83,7 +83,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # CDPATH
 setopt auto_cd
-cdpath=(. $HOME $HOME/src $HOME/Google\ Drive\ \(oliver.chen@traveloka.com\))
+cdpath=(. $HOME $HOME/src)
 
 # Hook direnv into zsh
 eval "$(direnv hook zsh)"
