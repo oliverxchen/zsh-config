@@ -73,8 +73,10 @@ ln -s $PWD_DIR/aliases.zsh $CUSTOM_DIR/aliases.zsh
 rm -f $CUSTOM_DIR/autosuggest.zsh
 ln -s $PWD_DIR/autosuggest.zsh $CUSTOM_DIR/autosuggest.zsh
 
+
 # source ~/.zshrc
-echo -e "\nSudo access is needed to change default shell\n"
+echo -e "\nSudo access is needed to change default shell.\n"
+
 
 if chsh -s $ZSH_CMD ; then
     echo -e "Installation Successful, exit terminal and enter a new session"
