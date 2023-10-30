@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/opt/python@3.9/libexec/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/opt/python@3.9/libexec/bin:/usr/local/bin:/usr/local/sbin:/Users/oliverchen/Applications/geckodriver:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -79,16 +79,14 @@ fi
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias docker="podman"
 
 # CDPATH
-setopt auto_cd
 cdpath=(. $HOME $HOME/src)
+unsetopt AUTO_CD
 
 # Hook direnv into zsh
 eval "$(direnv hook zsh)"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f $HOME'/google-cloud-sdk/path.zsh.inc' ]; then . $HOME/google-cloud-sdk/path.zsh.inc; fi
 
 # # The next line enables shell command completion for gcloud.
 # if [ -f $HOME'/google-cloud-sdk/completion.zsh.inc' ]; then . $HOME'/google-cloud-sdk/completion.zsh.inc'; fi
@@ -135,3 +133,15 @@ export PATH=$HOME/bin:$PATH
 
 # To enable GPG signing with git
 export GPG_TTY=$TTY
+
+# nvm stuff
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/oliverchen/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/oliverchen/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/oliverchen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/oliverchen/google-cloud-sdk/completion.zsh.inc'; fi
