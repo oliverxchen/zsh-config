@@ -46,6 +46,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   k
+  poetry
   zsh-autosuggestions
   zsh-completions
   zsh-history-substring-search
@@ -134,4 +135,4 @@ export PATH=$HOME/bin:$PATH
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # To enable GPG signing with git
-export GPG_TTY=$TTY
+export GPG_TTY=$(tty)
