@@ -13,3 +13,6 @@ gm() {
 }
 
 alias docker="podman"
+alias docker_rm="podman ps -aq -f status=exited | xargs -r podman rm"
+alias docker_rmi="podman images -q -f 'dangling=true' | xargs -r podman rmi"
+alias docker_clean="docker_rm && docker_rmi"
