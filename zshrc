@@ -120,6 +120,15 @@ if [ -f '/Users/oliverchen/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/oliv
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/oliverchen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/oliverchen/google-cloud-sdk/completion.zsh.inc'; fi
 
+# uv
+export PATH="/Users/oliverchen/.local/bin:$PATH"
+
+# Flutter Fire
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# chromedriver
+export PATH="$PATH":"$HOME/.puppeteer/chromedriver/mac_arm-133.0.6943.141/chromedriver-mac-arm64"
+
 # Java path
 export JAVA_HOME=~/.sdkman/candidates/java/current/
 export PATH=$JAVA_HOME/bin:$PATH
@@ -128,5 +137,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# uv
-export PATH="/Users/oliverchen/.local/bin:$PATH"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
