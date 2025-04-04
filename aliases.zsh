@@ -1,4 +1,3 @@
-alias gc="git checkout"
 alias gb="git branch"
 alias gp="git pull"
 alias gs="git status"
@@ -11,6 +10,12 @@ gm() {
     git checkout main
   fi
 }
+
+gc() {
+  git branch --merged main | grep -v '^\*' | grep -v ' main$' | xargs -n 1 git branch -d
+  git fetch --all --prune
+}
+
 
 alias docker="podman"
 alias docker_rm="podman ps -aq -f status=exited | xargs -r podman rm"
