@@ -20,7 +20,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 if [[ -n "$CURSOR_AGENT" ]]; then
   # Use a simple theme for better compatibility with Cursor Agent
-  ZSH_THEME="robbyrussell"
+  ZSH_THEME="minimal"
 else
   ZSH_THEME="powerlevel10k/powerlevel10k"
 fi
