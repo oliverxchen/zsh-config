@@ -12,7 +12,13 @@ gm() {
 }
 
 gc() {
-  git branch --merged main | grep -v '^\*' | grep -v ' main$' | xargs -n 1 git branch -d
+  git branch --merged main \
+    | sed 's/^[*+ ]*//' \
+    | grep -v '^main$' \
+    | while read -r branch; do
+        git branch -d "$branch"
+      done
+
   git fetch --all --prune
 }
 
