@@ -133,7 +133,6 @@ fi
 export GPG_TTY=$TTY
 
 
-. "$HOME/.cargo/env"
 
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -142,11 +141,11 @@ if [ -f '/Users/oliverchen/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/oliv
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/oliverchen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/oliverchen/google-cloud-sdk/completion.zsh.inc'; fi
 
+# Rust
+export PATH="/Users/oliverchen/.cargo/env:$PATH"
+
 # uv
 export PATH="/Users/oliverchen/.local/bin:$PATH"
-
-# Flutter Fire
-export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # chromedriver
 export PATH="$PATH":"$HOME/.puppeteer/chromedriver/mac_arm-133.0.6943.141/chromedriver-mac-arm64"
