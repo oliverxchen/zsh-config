@@ -142,7 +142,10 @@ if [ -f '/Users/oliverchen/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/oliv
 if [ -f '/Users/oliverchen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/oliverchen/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Rust
-export PATH="/Users/oliverchen/.cargo/env:$PATH"
+export PATH="$HOME/.cargo/env:$PATH"
+
+# Golang
+export PATH="$HOME/go/bin:$PATH"
 
 # uv
 export PATH="/Users/oliverchen/.local/bin:$PATH"
@@ -162,3 +165,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/oliverchen/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
