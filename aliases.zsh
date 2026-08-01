@@ -33,3 +33,11 @@ alias docker_rm="podman ps -aq -f status=exited | xargs -r podman rm"
 alias docker_rmi="podman images -q -f 'dangling=true' | xargs -r podman rmi"
 alias docker_clean="docker_rm && docker_rmi"
 
+bd() {
+  if [[ "${1:-}" == "dolt" ]]; then
+    GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/beads-dolt.json" \
+      command bd "$@"
+  else
+    command bd "$@"
+  fi
+}
