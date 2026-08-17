@@ -34,7 +34,7 @@ alias docker_rmi="podman images -q -f 'dangling=true' | xargs -r podman rmi"
 alias docker_clean="docker_rm && docker_rmi"
 
 bd() {
-  if [[ "${1:-}" == "dolt" ]]; then
+  if [[ "${1:-}" == "dolt" || "${1:-}" == "bootstrap" ]]; then
     GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/beads-dolt.json" \
       command bd "$@"
   else
