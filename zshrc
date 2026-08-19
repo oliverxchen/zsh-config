@@ -78,15 +78,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
-
-export VISUAL=nvim
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -176,10 +167,14 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# >>> vim-config nvim paths >>>
-export PATH="/Users/oliverchen/.local/bin:/Users/oliverchen/.local/share/npm/bin:/Users/oliverchen/go/bin:$PATH"
-# <<< vim-config nvim paths <<<
 
-# >>> vim-config node path >>>
-export PATH="/opt/homebrew/opt/node/bin:$PATH"
-# <<< vim-config node path <<<
+
+# >>> vim-config additions >>>
+export PATH="/Users/oliverchen/.local/bin:/Users/oliverchen/.local/share/npm/bin:/Users/oliverchen/go/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
+export EDITOR=nvim
+export VISUAL=nvim
+export GIT_EDITOR=nvim
+alias vim=nvim
+alias vi=nvim
+# <<< vim-config additions <<<
