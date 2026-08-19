@@ -80,10 +80,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
+
+export VISUAL=nvim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -173,3 +175,11 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# >>> vim-config nvim paths >>>
+export PATH="/Users/oliverchen/.local/bin:/Users/oliverchen/.local/share/npm/bin:/Users/oliverchen/go/bin:$PATH"
+# <<< vim-config nvim paths <<<
+
+# >>> vim-config node path >>>
+export PATH="/opt/homebrew/opt/node/bin:$PATH"
+# <<< vim-config node path <<<

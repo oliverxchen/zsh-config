@@ -1,3 +1,6 @@
+alias vim=nvim
+alias vi=nvim
+
 alias gb="git branch"
 alias gp="git pull"
 alias gs="git status"
